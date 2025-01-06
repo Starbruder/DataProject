@@ -3,11 +3,11 @@ using System.Configuration;
 using System.Globalization;
 using System.Net.Http;
 
-namespace PlayScore;
+namespace PlayScore.Services;
 
 public class MoonphaseService
 {
-    private static readonly HttpClient _httpClient = new HttpClient();
+    private static readonly HttpClient _httpClient = new();
     private readonly string apiKey = ConfigurationManager.AppSettings["API_KEY_MOON"];
     private readonly string ApiUrl;
 
