@@ -1,8 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
-using WpfTestApp.Services;
+using PlayScore.Services;
 
-namespace WpfTestApp;
+namespace PlayScore;
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml

@@ -1,30 +1,24 @@
 ﻿using System.Data.SQLite;
 
-namespace WpfTestApp
-{
-    public class DatabaseHelper
-    {
-        private readonly SQLiteConnection _connection;
+namespace PlayScore;
 
-        public DatabaseHelper(SQLiteConnection connection)
+public class DatabaseHelper(SQLiteConnection connection)
+{
+    public void ConnectToDatabase()
+    {
+        if (connection.State == System.Data.ConnectionState.Open)
         {
-            _connection = connection;
+            return;
         }
 
-        public void ConnectToDatabase()
+        try
         {
-            if (_connection.State != System.Data.ConnectionState.Open)
-            {
-                try
-                {
-                    _connection.Open();
-                    Console.WriteLine("Database connected.");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error: {ex.Message}");
-                }
-            }
+            connection.Open();
+            Console.WriteLine("Database connected.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
         }
     }
 }
