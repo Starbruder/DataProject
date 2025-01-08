@@ -15,7 +15,7 @@ public partial class MainWindow : Window
     private readonly MoonphaseService _moonphaseService;
     private readonly GameService _gameService;
 
-    public ObservableCollection<GameModel> Games { get; set; } = [];
+    public ObservableCollection<GameModel> Games { get; } = [];
 
     public MainWindow(DatabaseManager databaseManager, DatabaseHelper databaseHelper)
     {
@@ -24,8 +24,8 @@ public partial class MainWindow : Window
         _databaseManager = databaseManager;
         _databaseHelper = databaseHelper;
 
-        _moonphaseService = new MoonphaseService();
-        _gameService = new GameService();
+        _moonphaseService = new();
+        _gameService = new();
     }
 
     private void ConnectToDatabase(object sender, RoutedEventArgs e)
@@ -40,10 +40,10 @@ public partial class MainWindow : Window
 
     private void CreateTable(object sender, RoutedEventArgs e)
     {
-        string tableName = TableName.Text;
-
+        var tableName = TableName.Text;
         _databaseManager.CreateTable(tableName);
     }
+
     private async void GetMoonphase(object sender, RoutedEventArgs e)
     {
         string date = DateTextBox.Text;

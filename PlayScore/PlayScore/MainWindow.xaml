@@ -5,22 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlayScore"
         mc:Ignorable="d"
-        Title="WPF Test Window" Height="1000" Width="800">
-    
-    <StackPanel>
-        <Label>Playscore</Label>
-        <Button Click="ConnectToDatabase">Mit Datenbank verbinden</Button>
-        <Label>Name für Tabelle:</Label>
-        <TextBox Name="TableName"></TextBox>
-        <Button Click="CreateTable">Tabelle erstellen</Button>
+        Title="PlayScore" Height="1000" Width="800">
 
-        <Label Margin="250, 5, 250, 0" Height="30">Datum input Format: YYYY-MM-DD</Label>
-        <TextBox Name="DateTextBox" Width="200" Height="30" VerticalAlignment="Top" Margin="10" />
-        <Button Content="Get Moon Phase" Width="150" Height="30" VerticalAlignment="Top" Margin="10,5,10,0" Click="GetMoonphase"/>
+	<StackPanel AutomationProperties.Name="">
+		<Button Click="ConnectToDatabase" Height="30">Mit Datenbank verbinden</Button>
+		<Label HorizontalContentAlignment="Center">Name für Tabelle:</Label>
+		<TextBox Name="TableName"/>
+		<Button Click="CreateTable" Height="30">Tabelle erstellen</Button>
 
-        <TextBlock Name="MoonPhaseTextBlock" Margin="200,5,150,5" Height="30" FontSize="20"/>
+		<Label HorizontalContentAlignment="Center" Margin="250, 5, 250, 0" Height="30">Datum input Format: YYYY-MM-DD</Label>
+        <TextBox Name="DateTextBox" Width="200" Height="30" Margin="10" />
+        <Button Content="Get Moon Phase" Width="150" Height="30" Margin="10,5,10,0" Click="GetMoonphase"/>
 
-        <Button Content="Get Games" Width="150" Height="30" VerticalAlignment="Top" Margin="10,5,10,0" Click="GetGames"/>
+		<TextBlock TextAlignment="Center" Name="MoonPhaseTextBlock" Margin="0,5,0,5" Height="30" FontSize="20"/>
+
+        <Button Content="Get Games" Width="150" Height="30" Margin="10,5,10,0" Click="GetGames"/>
 
         <Label Margin="0, 5, 300, 0" Height="30">Liste der Spiele</Label>
         <ListBox x:Name="GamesListBox" 
