@@ -4,10 +4,8 @@ namespace PlayScore;
 
 public sealed class DatabaseManager(SQLiteConnection connection)
 {
-    public static void CreateDatabase()
+    public static void CreateDatabase(string dbPath)
     {
-        string dbPath = "PlayScore.db";
-
         if (!System.IO.File.Exists(dbPath))
         {
             SQLiteConnection.CreateFile(dbPath);

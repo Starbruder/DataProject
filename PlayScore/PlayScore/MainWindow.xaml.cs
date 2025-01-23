@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Windows;
 using PlayScore.Services;
 
@@ -14,6 +15,8 @@ public partial class MainWindow : Window
 
     private readonly MoonphaseService _moonphaseService;
     private readonly GameService _gameService;
+
+    private readonly string _dbPath = ConfigurationManager.AppSettings["CONNECTION_NAME"] ?? string.Empty;
 
     public ObservableCollection<GameModel> Games { get; } = [];
 
@@ -35,7 +38,7 @@ public partial class MainWindow : Window
 
     private void CreateDatabase(object sender, RoutedEventArgs e)
     {
-        DatabaseManager.CreateDatabase();
+        DatabaseManager.CreateDatabase(_dbPath);
     }
 
     private void CreateTable(object sender, RoutedEventArgs e)
