@@ -2,9 +2,9 @@
 
 namespace PlayScore;
 
-public class DatabaseManager(SQLiteConnection connection)
+public sealed class DatabaseManager(SQLiteConnection connection)
 {
-    public void CreateDatabase()
+    public static void CreateDatabase()
     {
         string dbPath = "PlayScore.db";
 

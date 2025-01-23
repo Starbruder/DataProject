@@ -2,7 +2,7 @@
 
 namespace PlayScore;
 
-public class MoonPhaseModel
+public sealed class MoonPhaseModel
 {
     [JsonProperty("date")]
     public string Date { get; set; }

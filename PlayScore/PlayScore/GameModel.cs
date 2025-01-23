@@ -2,7 +2,7 @@
 
 namespace PlayScore;
 
-public class GameModel
+public sealed class GameModel
 {
     [JsonProperty("id")]
     public int Id { get; set; }

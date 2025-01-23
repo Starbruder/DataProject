@@ -5,7 +5,7 @@ using System.Net.Http;
 
 namespace PlayScore.Services;
 
-public class MoonphaseService
+public sealed class MoonphaseService
 {
     private static readonly HttpClient _httpClient = new();
     private readonly string apiKey = ConfigurationManager.AppSettings["API_KEY_MOON"] ?? string.Empty;

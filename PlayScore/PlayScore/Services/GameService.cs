@@ -4,10 +4,10 @@ using System.Net.Http;
 
 namespace PlayScore.Services;
 
-public class GameService
+public sealed class GameService
 {
     private readonly HttpClient _httpClient;
-    private readonly string apiKey = ConfigurationManager.AppSettings["API_KEY_GAMES"];
+    private readonly string apiKey = ConfigurationManager.AppSettings["API_KEY_GAMES"] ?? string.Empty;
     private readonly string ApiUrl;
 
     public GameService()

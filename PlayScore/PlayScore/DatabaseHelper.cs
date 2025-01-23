@@ -2,7 +2,7 @@
 
 namespace PlayScore;
 
-public class DatabaseHelper(SQLiteConnection connection)
+public sealed class DatabaseHelper(SQLiteConnection connection)
 {
     public void ConnectToDatabase()
     {

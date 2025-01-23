@@ -1,6 +1,6 @@
 ﻿namespace PlayScore;
 
-public class MoonphaseTranslator
+public sealed class MoonphaseTranslator
 {
     private readonly Dictionary<string, string> _moonPhaseTranslations = new()
     {
@@ -16,7 +16,7 @@ public class MoonphaseTranslator
 
     public string Translate(string moonPhase)
     {
-        return (_moonPhaseTranslations.TryGetValue(moonPhase, out string translation))
+        return (_moonPhaseTranslations.TryGetValue(moonPhase, out var translation))
             ? translation
             : moonPhase; // Return the original name if no translation is found
     }

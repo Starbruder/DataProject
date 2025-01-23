@@ -35,7 +35,7 @@ public partial class MainWindow : Window
 
     private void CreateDatabase(object sender, RoutedEventArgs e)
     {
-        _databaseManager.CreateDatabase();
+        DatabaseManager.CreateDatabase();
     }
 
     private void CreateTable(object sender, RoutedEventArgs e)
