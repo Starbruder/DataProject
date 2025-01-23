@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:PlayScore"
         mc:Ignorable="d"
         Title="PlayScore" Height="1000" Width="800">
+	<Window.Icon>
+		<DrawingImage />
+	</Window.Icon>
 
 	<StackPanel AutomationProperties.Name="">
 		<Button Click="ConnectToDatabase" Height="30">Mit Datenbank verbinden</Button>

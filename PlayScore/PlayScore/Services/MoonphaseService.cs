@@ -8,7 +8,7 @@ namespace PlayScore.Services;
 public class MoonphaseService
 {
     private static readonly HttpClient _httpClient = new();
-    private readonly string apiKey = ConfigurationManager.AppSettings["API_KEY_MOON"];
+    private readonly string apiKey = ConfigurationManager.AppSettings["API_KEY_MOON"] ?? string.Empty;
     private readonly string ApiUrl;
 
     public MoonphaseService()
