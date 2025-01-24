@@ -13,8 +13,8 @@ public partial class MainWindow : Window
     private readonly DatabaseManager _databaseManager;
     private readonly DatabaseHelper _databaseHelper;
 
-    private readonly MoonphaseService _moonphaseService;
-    private readonly GameService _gameService;
+    private readonly MoonphaseService _moonphaseService = new();
+    private readonly GameService _gameService = new();
 
     private readonly string _dbPath = ConfigurationManager.AppSettings["CONNECTION_NAME"] ?? string.Empty;
 
@@ -26,9 +26,6 @@ public partial class MainWindow : Window
 
         _databaseManager = databaseManager;
         _databaseHelper = databaseHelper;
-
-        _moonphaseService = new();
-        _gameService = new();
     }
 
     private void ConnectToDatabase(object sender, RoutedEventArgs e)

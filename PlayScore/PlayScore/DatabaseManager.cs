@@ -20,7 +20,7 @@ public sealed class DatabaseManager(SQLiteConnection connection)
             connection.Open();
         }
 
-        using SQLiteCommand command = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS [{tableName}] (Id INTEGER PRIMARY KEY, Name TEXT);", connection);
+        using SQLiteCommand command = new($"CREATE TABLE IF NOT EXISTS [{tableName}] (Id INTEGER PRIMARY KEY, Name TEXT);", connection);
         try
         {
             command.ExecuteNonQuery();

@@ -4,7 +4,7 @@ using System.Net.Http;
 
 namespace PlayScore.Services;
 
-public sealed class GameService
+public sealed class GameService : IService
 {
     private readonly HttpClient _httpClient;
     private readonly string apiKey = ConfigurationManager.AppSettings["API_KEY_GAMES"] ?? string.Empty;
