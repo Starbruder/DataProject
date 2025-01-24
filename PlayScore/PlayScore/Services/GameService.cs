@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PlayScore.Models;
 using System.Configuration;
 using System.Net.Http;
 

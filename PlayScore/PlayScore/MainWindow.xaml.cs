@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Windows;
+using PlayScore.Models;
 using PlayScore.Services;
 
 namespace PlayScore;

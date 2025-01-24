@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PlayScore;
+namespace PlayScore.Models;
 
 public sealed class MoonPhaseModel
 {
